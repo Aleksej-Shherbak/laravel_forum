@@ -1,14 +1,15 @@
 ## Форум на Laravel 5.8.16
 
-Настройки для докера взяты из этой [статьи](https://www.digitalocean.com/community/tutorials/how-to-set-up-laravel-nginx-and-mysql-with-docker-compose)
+Настройки для докера взяты из этой [статьи](https://www.digitalocean.com/community/tutorials/how-to-set-up-laravel-nginx-and-mysql-with-docker-compose). Запускать следующим образом:
 
-- [Simple, fast routing engine](https://laravel.com/docs/routing).
-- [Powerful dependency injection container](https://laravel.com/docs/container).
-- Multiple back-ends for [session](https://laravel.com/docs/session) and [cache](https://laravel.com/docs/cache) storage.
-- Expressive, intuitive [database ORM](https://laravel.com/docs/eloquent).
-- Database agnostic [schema migrations](https://laravel.com/docs/migrations).
-- [Robust background job processing](https://laravel.com/docs/queues).
-- [Real-time event broadcasting](https://laravel.com/docs/broadcasting).
+- Убедитесь, что у вас установлены docker и docker-compose.
+- Склонируйте проект.
+- Выполните команду `$ docker-compose up -d`.
+- Выполните миграции в контейнере `app`. 
+- После того, как база данных будет создана, выполните сидинг при помощи `tinker`.
+- `$t = factory (App\Thread::class, 50)->create();`
+- `$t->each(function($t_item) { factory(App\Reply::class, 10)->create(['thread_id' => $t_item->id]); })`
+- Убедитесь, что сайт корректно работает, перейдя по ссылке [localhost](http://localhost/)
 
 Laravel is accessible, powerful, and provides tools required for large, robust applications.
 
