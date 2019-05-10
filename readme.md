@@ -11,7 +11,10 @@
 - `$t->each(function($t_item) { factory(App\Reply::class, 10)->create(['thread_id' => $t_item->id]); })`
 - Убедитесь, что сайт корректно работает, перейдя по ссылке [localhost](http://localhost/)
 
-Laravel is accessible, powerful, and provides tools required for large, robust applications.
+
+Тесты запускаются при помощи следующей команды: 
+
+`$ vendor/bin/phpunit`
 
 ## Learning Laravel
 
